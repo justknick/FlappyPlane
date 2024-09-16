@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxiphxv2penc"]
+
+[ext_resource type="Script" path="res://scenes/manager/column_spawn_manager.gd" id="1_vlanr"]
+[ext_resource type="PackedScene" uid="uid://d2x34or5xlqpi" path="res://scenes/game_objects/column.tscn" id="2_tb8ax"]
+
+[node name="ColumnSpawnManager" type="Node"]
+script = ExtResource("1_vlanr")
+column_scene = ExtResource("2_tb8ax")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[node name="SpawnMarkerUpper" type="Marker2D" parent="."]
+position = Vector2(615, 322.5)
+
+[node name="SpawnMarkerLower" type="Marker2D" parent="."]
+position = Vector2(615, 522.5)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
