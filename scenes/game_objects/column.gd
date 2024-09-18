@@ -2,6 +2,7 @@ extends Node2D
 
 class_name Column
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 # course 59.18 - troubleshoot needed
 #func _ready() -> void:
@@ -36,3 +37,8 @@ func _on_body_entered(body: Node2D) -> void:
 		#if body.has_method("defeat") == true:
 			#body.defeat()
 	#SignalManager.on_plane_defeat.emit()
+
+
+func _on_laser_body_entered(body: Node2D) -> void:
+	if body is PlayerPlane:
+		audio_stream_player.play()
