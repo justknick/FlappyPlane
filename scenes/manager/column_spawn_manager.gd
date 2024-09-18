@@ -7,11 +7,12 @@ extends Node
 @onready var timer: Timer = $Timer
 
 
-func _ready() -> void:
-	timer.timeout.connect(_on_timer_timeout)
+#func _ready() -> void:
+	##timer.timeout.connect(on_timer_timeout)
+	#pass
 
 
-func spawn_pipes() -> void:
+func spawn_column() -> void:
 	# create column instance, locate the random spot between markers
 	var new_column = column_scene.instantiate()
 	var spawn_position: float = randf_range(spawn_marker_upper.position.y\
@@ -21,7 +22,17 @@ func spawn_pipes() -> void:
 	new_column.position = Vector2(spawn_marker_upper.position.x, spawn_position)
 	add_child(new_column)
 	
+	#print("spawn!")
+
+
+func stop_spawn_column() -> void:
+	timer.stop()
+	
+	# course 59.18 - troubleshoot needed
+	for column in get_children():
+		column.set_process(false)
+		set_process(false)
 
 
 func _on_timer_timeout() -> void:
-	spawn_pipes()
+	spawn_column()

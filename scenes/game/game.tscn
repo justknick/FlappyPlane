@@ -22,4 +22,4 @@ position = Vector2(0, 884)
 [node name="ColumnSpawnManager" parent="." instance=ExtResource("3_qdshy")]
 
 [node name="Plane" parent="." instance=ExtResource("2_hryod")]
-position = Vector2(77, 447)
+position = Vector2(70, 150)

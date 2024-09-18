@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+class_name PlayerPlane
+
+
 @onready var plane_animated_sprite: AnimatedSprite2D = $PlaneAnimatedSprite
 @onready var plane_animated_player: AnimationPlayer = $PlaneAnimatedPlayer
 
@@ -31,3 +34,4 @@ func fly() -> void:
 func defeat() -> void:
 	set_physics_process(false)
 	plane_animated_sprite.stop()
+	SignalManager.on_plane_defeat.emit()
