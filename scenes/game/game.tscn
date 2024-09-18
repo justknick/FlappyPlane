@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://qauiuo45nbdc"]
+[gd_scene load_steps=8 format=3 uid="uid://qauiuo45nbdc"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_fbbii"]
 [ext_resource type="Texture2D" uid="uid://c7dvjhccyx7ky" path="res://assets/background/rocks_2.png" id="1_mvhpg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cs4om4gmnvroj" path="res://scenes/game_objects/barrier.tscn" id="2_d8dld"]
 [ext_resource type="PackedScene" uid="uid://bdw12xg7ck05n" path="res://scenes/plane/plane.tscn" id="2_hryod"]
 [ext_resource type="PackedScene" uid="uid://dxiphxv2penc" path="res://scenes/manager/column_spawn_manager.tscn" id="3_qdshy"]
+[ext_resource type="PackedScene" uid="uid://pnp6p4adbm2v" path="res://scenes/ui/hud.tscn" id="3_slr84"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_fbbii")
@@ -13,6 +14,14 @@ script = ExtResource("1_fbbii")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOverUI" parent="CanvasLayer" instance=ExtResource("2_6hett")]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("3_slr84")]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="ColumnSpawnManager" parent="." instance=ExtResource("3_qdshy")]
 

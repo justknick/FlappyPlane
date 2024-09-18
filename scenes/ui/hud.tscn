@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://pnp6p4adbm2v"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_i8jvh"]
+[ext_resource type="LabelSettings" uid="uid://djrq1n2o7cruf" path="res://assets/resources/label_red_64_resource.tres" id="1_xuycy"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_i8jvh")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "00"
+label_settings = ExtResource("1_xuycy")
+horizontal_alignment = 2
+vertical_alignment = 1

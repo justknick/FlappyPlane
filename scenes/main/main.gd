@@ -2,11 +2,13 @@ extends Control
 
 @onready var bgm_sound: AudioStreamPlayer = $BGMSound
 @onready var start_label: Label = $MarginContainer/StartLabel
+@onready var score_label: Label = $MarginContainer/ScoreLabel
 
 var startable = false
 
 func _ready():
 	bgm_sound.play()
+	score_label.text = str(ScoreManager.get_high_score())
 
 
 func _process(_delta: float) -> void:

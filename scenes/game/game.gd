@@ -4,6 +4,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	ScoreManager.set_score(0)
 	SignalManager.on_plane_defeat.connect(_on_plane_defeat)
 
 

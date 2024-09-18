@@ -42,3 +42,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_laser_body_entered(body: Node2D) -> void:
 	if body is PlayerPlane:
 		audio_stream_player.play()
+		ScoreManager.increment_score()
