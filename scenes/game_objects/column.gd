@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Column
 
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $ColumnScoreSound
 
 # course 59.18 - troubleshoot needed
 #func _ready() -> void:
