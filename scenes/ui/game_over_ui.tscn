@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://jfi0ppuvuvw4"]
+
+[ext_resource type="AudioStream" uid="uid://c1ggo3wdc712u" path="res://assets/audio/game_over.wav" id="1_3de67"]
+[ext_resource type="LabelSettings" uid="uid://djrq1n2o7cruf" path="res://assets/resources/label_red_64_resource.tres" id="1_f1wsq"]
+[ext_resource type="Script" path="res://scenes/ui/game_over_ui.gd" id="1_xntqo"]
+[ext_resource type="LabelSettings" uid="uid://bqmjlf18xqwyd" path="res://assets/resources/label_white_44.tres" id="2_4lqkh"]
+
+[node name="GameOverUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xntqo")
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3de67")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0000
+"
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Game
+Over"
+label_settings = ExtResource("1_f1wsq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpaceLabel" type="Label" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+text = "Press Space"
+label_settings = ExtResource("2_4lqkh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
