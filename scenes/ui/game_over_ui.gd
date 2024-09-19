@@ -21,6 +21,8 @@ func check_input() -> void:
 
 
 func on_defeat():
+	ScoreManager.save_highscore_to_file()
+	print("saving...")
 	show()
 	timer.start()
 	game_over_sound.play()
