@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh3f0128872pt"]
+
+[ext_resource type="PackedScene" uid="uid://ckoflyjbsbhoc" path="res://scenes/game_objects/bg_parallax_layer.tscn" id="1_6b3w0"]
+[ext_resource type="Script" path="res://scenes/game_objects/game_bg_parallax.gd" id="1_7vup7"]
+[ext_resource type="Texture2D" uid="uid://djsrogbwcyfsg" path="res://assets/background/sky.png" id="2_s1ufw"]
+[ext_resource type="Texture2D" uid="uid://dybuv7dqu87wh" path="res://assets/background/clouds_2.png" id="3_of7d8"]
+[ext_resource type="Texture2D" uid="uid://c72ocj4yxcs0g" path="res://assets/background/rocks_1.png" id="4_7oqyi"]
+[ext_resource type="Texture2D" uid="uid://c7dvjhccyx7ky" path="res://assets/background/rocks_2.png" id="5_m5aor"]
+
+[node name="GameBGParallax" type="ParallaxBackground"]
+script = ExtResource("1_7vup7")
+
+[node name="BGParallaxLayer" parent="." instance=ExtResource("1_6b3w0")]
+texture = ExtResource("2_s1ufw")
+
+[node name="BGParallaxLayer2" parent="." instance=ExtResource("1_6b3w0")]
+texture = ExtResource("3_of7d8")
+scroll_scale = 0.3
+
+[node name="BGParallaxLayer3" parent="." instance=ExtResource("1_6b3w0")]
+texture = ExtResource("4_7oqyi")
+scroll_scale = 0.5
+
+[node name="BGParallaxLayer4" parent="." instance=ExtResource("1_6b3w0")]
+texture = ExtResource("5_m5aor")
+scroll_scale = 0.75

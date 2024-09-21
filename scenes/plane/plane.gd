@@ -2,16 +2,15 @@ extends CharacterBody2D
 
 class_name PlayerPlane
 
-
 @onready var plane_animated_sprite: AnimatedSprite2D = $PlaneAnimatedSprite
 @onready var plane_animated_player: AnimationPlayer = $PlaneAnimatedPlayer
+@onready var plane_sound: AudioStreamPlayer = $PlaneSound
 
 const GRAVITY: float = 1000.0
 const POWER: float = -350.0
 
 
 func _physics_process(delta: float) -> void:
-	#print(velocity)
 	# set gravity effect 
 	velocity.y += GRAVITY * delta
 	# get player input  
@@ -34,4 +33,5 @@ func fly() -> void:
 func defeat() -> void:
 	set_physics_process(false)
 	plane_animated_sprite.stop()
+	plane_sound.stop()
 	SignalManager.on_plane_defeat.emit()
