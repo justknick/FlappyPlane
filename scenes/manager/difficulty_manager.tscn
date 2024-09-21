@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7aeu1icoukva"]
+
+[ext_resource type="Script" path="res://scenes/manager/difficulty_manager.gd" id="1_dus06"]
+[ext_resource type="PackedScene" uid="uid://dxiphxv2penc" path="res://scenes/manager/column_spawn_manager.tscn" id="2_fttb2"]
+
+[node name="DifficultyManager" type="Node"]
+script = ExtResource("1_dus06")
+column_spawn_manager = ExtResource("2_fttb2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 12.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

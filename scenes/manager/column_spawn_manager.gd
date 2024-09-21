@@ -7,9 +7,8 @@ extends Node
 @onready var timer: Timer = $Timer
 
 
-#func _ready() -> void:
-	##timer.timeout.connect(on_timer_timeout)
-	#pass
+func _ready() -> void:
+	SignalManager.on_level_up.connect(on_difficulty_increase)
 
 
 func spawn_column() -> void:
@@ -21,8 +20,6 @@ func spawn_column() -> void:
 	# spawn column at the random spot
 	new_column.position = Vector2(spawn_marker_upper.position.x, spawn_position)
 	add_child(new_column)
-	
-	#print("spawn!")
 
 
 func stop_spawn_column() -> void:
@@ -32,6 +29,13 @@ func stop_spawn_column() -> void:
 	for column in get_children():
 		column.set_process(false)
 		set_process(false)
+
+
+func on_difficulty_increase(level: int) -> void:
+	# increase range of spawn position
+	if level <= 5:
+		spawn_marker_upper.position.y -= 16
+		spawn_marker_lower.position.y += 16 
 
 
 func _on_timer_timeout() -> void:

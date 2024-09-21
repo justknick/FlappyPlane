@@ -41,13 +41,13 @@ func load_high_score() -> void:
 			#_high_score = file.get_32()
 			# retrieves as text and converts to int
 			_high_score = file.get_as_text().to_int()
-			print("loaded high score")
-		else:
-			print("loaded but no high score")
+			#print("loaded high score")
+		#else:
+			#print("loaded but no high score")
 		# close file
 		file.close()
-	else:
-		print("failed to load file..")
+	#else:
+		#print("failed to load file..")
 
 
 func save_highscore_to_file() -> void:
@@ -59,4 +59,4 @@ func save_highscore_to_file() -> void:
 		file.store_string(str(_high_score))
 		# close file 
 		file.close()
-		print("score saved! ")
+		#print("score saved! ")

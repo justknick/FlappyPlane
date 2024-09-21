@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, -0.523599, 0.0]
+"values": [0.0, -0.785398, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1d8x3"]
@@ -55,9 +55,10 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w385j"]
-radius = 20.0
+radius = 24.0
 
 [node name="Plane" type="CharacterBody2D" groups=["plane"]]
+collision_layer = 2
 script = ExtResource("1_r8bex")
 
 [node name="PlaneSound" type="AudioStreamPlayer" parent="."]
@@ -78,4 +79,5 @@ autoplay = "fly"
 frame_progress = 0.4813
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
 shape = SubResource("CircleShape2D_w385j")

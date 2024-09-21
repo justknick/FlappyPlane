@@ -11,7 +11,7 @@ func _ready() -> void:
 	SignalManager.on_plane_defeat.connect(on_defeat)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	check_input()
 
 
@@ -22,7 +22,7 @@ func check_input() -> void:
 
 func on_defeat():
 	ScoreManager.save_highscore_to_file()
-	print("saving...")
+	#print("saving...")
 	show()
 	timer.start()
 	game_over_sound.play()
