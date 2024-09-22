@@ -7,7 +7,7 @@ class_name PlayerPlane
 @onready var plane_sound: AudioStreamPlayer = $PlaneSound
 
 const GRAVITY: float = 1000.0
-const POWER: float = -380.0
+const POWER: float = -375.0
 
 
 func _physics_process(delta: float) -> void:

@@ -43,6 +43,10 @@ texture = ExtResource("1_mvhpg")
 [node name="GameBGParallax" parent="." instance=ExtResource("8_o03el")]
 visible = false
 
+[node name="DelayStartTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOverUI" parent="CanvasLayer" instance=ExtResource("2_6hett")]
